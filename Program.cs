@@ -1,4 +1,9 @@
-﻿class Program
+﻿using Raylib_cs;
+
+namespace FinalProject;
+
+
+class Program
 {
     public static void Main()
     {

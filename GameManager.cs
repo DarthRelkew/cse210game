@@ -6,6 +6,7 @@ class GameManager
     public const int SCREEN_HEIGHT = 600;
 
     private string _title;
+    private List<GameObject> _gameObjects = new List<GameObject>();
 
     public GameManager()
     {
@@ -47,7 +48,8 @@ class GameManager
     /// </summary>
     private void InitializeGame()
     {
-
+        Player p = new Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / -50);
+        _gameObjects.Add(p);
     }
 
     /// <summary>
@@ -55,7 +57,10 @@ class GameManager
     /// </summary>
     private void HandleInput()
     {
-
+        foreach (GameObject item in _gameObjects)
+        {
+            item.ProcessActions();
+        }
     }
 
     /// <summary>
@@ -63,7 +68,10 @@ class GameManager
     /// </summary>
     private void ProcessActions()
     {
-
+        foreach (GameObject item in _gameObjects)
+        {
+            item.ProcessActions();
+        }
     }
 
     /// <summary>
@@ -71,6 +79,9 @@ class GameManager
     /// </summary>
     private void DrawElements()
     {
-
+        foreach (GameObject item in _gameObjects)
+        {
+            item.Draw();
+        }
     }
 }
